@@ -3,6 +3,7 @@ const router = express.Router()
 const Middleware = require('../Middleware')
 const UserModel = require('../Models/UserModel')
 const TaskModel = require('../Models/TaskModel')
+const Tickets = require('../Models/ContactSupportModel')
 const bcrypt = require('bcrypt')
 
 router.delete('/deleteAccount/:_id', Middleware, async (req, res) => {
@@ -17,6 +18,7 @@ router.delete('/deleteAccount/:_id', Middleware, async (req, res) => {
         const checkPassword = await bcrypt.compare(password, user?.password)
         if (!checkPassword) return res.status(401).json({ message: 'Invalid password' })
         await TaskModel.deleteMany({ userId: user?._id })
+        await Tickets.deleteMany({ userId: user?._id })
         await UserModel.findByIdAndDelete({ _id: user?._id })
         res.clearCookie('authToken')
         return res.status(200).json({ message: 'Account successfully delete' })
