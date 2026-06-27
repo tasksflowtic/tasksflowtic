@@ -1,0 +1,49 @@
+.dwm-page {
+    width: 400px;
+    height: 100%;
+}
+
+.bwm-btns {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.bwm-btns button {
+    border: none;
+    outline: none;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#link {
+    text-decoration: none;
+}
+
+.Daily {
+    background-color: #3B82F6;
+    color: #ffffff;
+}
+
+.Weekly {
+    background-color: #10B981;
+    color: #ffffff;
+}
+
+.Monthly {
+    background-color: #F59E0B;
+    color: #ffffff;
+}
+
+
+/* media query */
+@media (min-width: 222px) and (max-width: 570px){
+    .dwm-page{
+        width: 100%;
+    }
+}

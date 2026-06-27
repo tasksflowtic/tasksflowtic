@@ -1,0 +1,82 @@
+.adminprofile-page {
+    width: 400px;
+    padding: 10px;
+    height: calc(100vh - 20px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.go-back-sec {
+    display: flex;
+    align-items: center;
+}
+
+.go-back-sec p {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #9A9AA3;
+}
+
+.go-back-sec span {
+    font-size: 14px;
+    margin: 0px 5px;
+    margin-bottom: -3px;
+}
+.profile-data{
+    width: 100%;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-name h1{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: black;
+    text-shadow: 2px 2px 2px rgba(206,89,55,0.45);
+    font-family: 'flamebold';
+    font-size: 45px;
+    font-weight: lighter;
+}
+.admin-name p{
+    font-family: 'flamebold';
+    font-size: 25px;
+    font-weight: lighter;
+    margin-top: 10px;
+}
+.profile-form{
+    width: 100%;
+    margin-top: 10px;
+}
+.profile-form div{
+    padding: 10px;
+    width: calc(100% - 22px);
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.profile-form div label{
+    font-size: 14px;
+    color: #9A9AA3;
+}
+.profile-form div p{
+    font-size: 14px;
+}

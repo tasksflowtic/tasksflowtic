@@ -1,0 +1,247 @@
+.showtasks-page {
+    width: 100%;
+    height: calc(100% - 30px);
+}
+
+.childtasks-page {
+    width: 400px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.childtasks-page::-webkit-scrollbar {
+    display: none;
+}
+
+.task-popup {
+    margin: 5px 0px;
+    background-color: white;
+    padding: 10px;
+    width: calc(100% - 24px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-left: 1px;
+    cursor: pointer;
+    position: relative;
+}
+
+.title-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-status h2 {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.title-status p {
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+.Pending {
+    color: #D97706;
+    background: #FEF3C7;
+}
+
+.progress {
+    color: #2563EB;
+    background: #DBEAFE;
+}
+
+.completed {
+    color: #15803D;
+    background: #DCFCE7;
+}
+
+.cancellled {
+    color: #DC2626;
+    background: #FEE2E2;
+}
+
+#task-des {
+    font-size: 13px;
+    font-weight: lighter;
+    color: #9A9AA3;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    width: 100%;
+    -webkit-box-orient: vertical;
+}
+
+#reminder-popup {
+    font-size: 12px;
+    color: orange;
+    font-weight: lighter;
+}
+
+.time-periority {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.task-time {
+    display: flex;
+    align-items: center;
+    margin-left: -2px;
+}
+
+.task-time p {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    /* color: #9A9AA3; */
+    color: black;
+}
+
+.task-time p span {
+    margin-bottom: -3px;
+}
+
+#hyphen {
+    margin: 0px 5px;
+}
+
+.task-priority {
+    font-size: 14px;
+}
+
+.Study {
+    color: #7C3AED;
+    background: #EDE9FE;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Work {
+    color: #2563EB;
+    background: #DBEAFE;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Personal {
+    color: #16A34A;
+    background: #FEF3C7;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Shopping {
+    color: #D97706;
+    background: #F3F3C7;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Health {
+    color: #DC2626;
+    background: #FEE2E2;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Home {
+    color: #BE185D;
+    background: #FCE7F3;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Finance {
+    color: #065F46;
+    background: #D1FAE5;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Travel {
+    color: #0EA5E9;
+    background: #E0F2FE;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.Others {
+    color: #374151;
+    background: #F3F4F6;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+
+/* todays tasks */
+.todaytasks {
+    width: 400px;
+    height: calc(100% - 60px);
+}
+
+.no-task-sec {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.no-task-sec p {
+    font-size: 14px;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-task-sec button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    outline: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* today task media queries*/
+@media (min-width: 222px) and (max-width: 570px){
+    .childtasks-page{
+        width: 100%;
+    }
+    .no-task-sec{
+        width: 100%;
+    }
+    .todaytasks{
+        width: 100%;
+    }
+}

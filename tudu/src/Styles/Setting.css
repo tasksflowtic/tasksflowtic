@@ -1,0 +1,181 @@
+#title {
+    font-size: 20px;
+    font-family: 'flamebold';
+    font-weight: lighter;
+}
+
+.setting-panel {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.setting-popup {
+    margin: 10px 0px;
+}
+
+.setting-panel span {
+    color: grey;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.setting-child-popup{
+    margin-top: 5px;
+    border-radius: 10px;
+}
+.setting-child-popup p{
+    font-size: 13px;
+    font-weight: lighter;
+    color:black;
+    cursor: pointer;
+    margin-bottom:7px;
+}
+#signout-btn{
+    border: 1px solid lightgrey;
+    height: 45px;
+    outline: none;
+    font-size: 14px;
+    background-color:black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* delete account component */
+.warning-popup{
+    height: 60px;
+    width: calc(100% - 20px);
+    padding: 0px 10px;
+    border-radius: 15px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.note{
+    margin-top: 20px;
+}
+.note p{
+    font-size: 13px;
+    color: grey;
+    font-weight: lighter;
+}
+#dlt-password{
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    width: calc(100% - 22px);
+    height: 45px;
+    padding: 0px 10px;
+    outline: none;
+    margin-top: 10px;
+}
+#delete-account{
+    margin-top: 10px;
+    height: 45px;
+    width: 100%;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+
+/* email update */
+.email-update-page {
+    padding: 15px;
+    width: 400px;
+    height: calc(100vh - 30px);
+}
+
+#go-back-sec {
+    display: flex;
+    align-items: center;
+}
+
+#go-back-sec span {
+    margin: 0px 7px;
+    font-size: 13px;
+}
+
+#go-back-sec p:nth-child(1) {
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#go-back-sec p {
+    font-size: 14px;
+}
+
+#info {
+    font-size: 14px;
+    font-weight: lighter;
+}
+.email-main-sec{
+    margin-top: 20px;
+}
+.child-email-main-sec{
+    width: 100%;
+}
+.email-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title-email h3{
+    font-family: 14px;
+    font-family: 'flamebold';
+    font-weight: lighter;
+}
+.title-email p{
+    font-size: 14px;
+    font-weight:lighter;
+    color: rgb(180, 180, 180);
+}
+#editbtn{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: extralighter;
+}
+
+.email-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.email-form input{
+    padding: 0px 10px;
+    width: calc(100% - 22px);
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: 14px;
+    font-weight: lighter;
+    height: 45px;
+}
+.email-form button{
+    margin-top: 10px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: 14px;
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
+/* media query */
+@media (min-width: 222px) and (max-width: 570px){
+    .setting-panel{
+        width: 100%;
+    }
+    .email-update-page{
+        width:calc(100% - 30px);
+    }
+}

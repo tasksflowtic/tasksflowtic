@@ -1,0 +1,43 @@
+.all-task-page{
+    width: 100%;
+    height: 100%;
+}
+.childall-task-page{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.childalltask-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.childalltask-header h3{
+    font-family: 'flamebold';
+    font-size: 18px;
+    font-weight: lighter;
+}
+.show-all-tasks-sec{
+    width: 100%;
+    height: calc(100% - 20px);
+}
+#clear-btn{
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: transparent;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* media queries */
+@media (min-width: 222px) and (max-width: 570px){
+    .childall-task-page{
+        width: 100%;
+    }
+}
