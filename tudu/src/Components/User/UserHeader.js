@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import '../../Styles/UserHeader.css'
 import logo from '../../Images/logo.png'
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
@@ -14,12 +14,13 @@ import SignOutApi from '../Controller/SignOutApi';
 const UserHeader = () => {
 
     const { user } = useContext(ThemeContext)
+    const [showlinks, setshowlinks] = useState(false)
 
     return (
         <div className='user-header'>
 
             <Link to={'/Flowtic'} id='links'>
-            <img src={logo} alt="" id='logo' />
+                <img src={logo} alt="" id='logo' />
             </Link>
 
             <div className='nav-links'>
@@ -29,8 +30,13 @@ const UserHeader = () => {
                 <div>
                     <Link to={'/daily/weekly/monthly'} id='links'><p><CalendarMonthRoundedIcon style={{ color: 'black' }} /></p></Link>
                 </div>
-                <div>
-                    <Link to={'/createtask'} id='links'><p><AddRoundedIcon style={{ color: 'black' }} /></p></Link>
+                <div id='link-box' className='project-links'>
+                    <button onClick={()=>setshowlinks(prev => !prev)}><AddRoundedIcon style={{ color: 'black', cursor: 'pointer' }}/></button>
+                    {showlinks &&
+                        <div className='task-projects-link'>
+                            <Link to={'/createtask'} id='links'><p style={{ color: 'white' }}>Create Task</p></Link>
+                            <Link to={'/createproject'} id='links'><p style={{ color: 'white' }}>Create Project</p></Link>
+                        </div>}
                 </div>
                 <div>
                     <Link to={'/contactsupport/issues'} id='links'><p><SendRoundedIcon style={{ color: 'black', transform: 'rotate(-45deg)' }} /></p></Link>
@@ -46,7 +52,7 @@ const UserHeader = () => {
             <div className='btns'>
                 {
                     !user ? <button>SignUp</button> :
-                        <button onClick={()=>SignOutApi()}>SignOut</button>
+                        <button onClick={() => SignOutApi()}>SignOut</button>
                 }
             </div>
 

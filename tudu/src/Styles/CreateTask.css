@@ -107,6 +107,15 @@
     cursor: pointer;
 }
 
+
+/* create project css */
+.create-project-main{
+    width:370px;
+    padding: 15px;
+    height: calc(100vh - 30px);
+    background-color: orange;
+}
+
 /* media query */
 @media (min-width: 222px) and (max-width: 570px){
     .childcreate-task-page{

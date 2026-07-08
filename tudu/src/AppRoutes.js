@@ -19,6 +19,7 @@ import ContactSupportCard from './Components/Shared/ContactSupportAllTicket';
 import SupportConversations from './Components/Shared/SupportConversations';
 import UserAnnouncement from './Components/User/UserAnnouncement';
 import ResetPasswordUsingLink from './Components/Auth/ResetPasswordUsingLink';
+import CreateProject from './Components/User/CreateProject';
 
 // admin
 import AdminSignIn from './Components/Admin/AdminSignIn';
@@ -70,6 +71,7 @@ const AppRoutes = () => {
                         <Route path='/setting/contactSupport' element={<ContactSupport />} />
                         <Route path='/contactsupport/issues' element={<ContactSupportCard />} />
                         <Route path='/announcements' element={<UserAnnouncement />} />
+                        <Route path='/createproject' element={<CreateProject/>} />
                         <Route path='/*' element={<NotFoundPage />} />
                     </>
                 }

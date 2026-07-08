@@ -45,10 +45,32 @@
 .nav-links div {
     margin-bottom: 20px;
 }
-
+.nav-links div button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
 #links {
     text-decoration: none;
     color: white;
+}
+#links p{
+    font-size: 14px;
+}
+.project-links{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.task-projects-link{
+    z-index:1;
+    position: absolute;
+    left:70px;
+    padding: 10px;
+    margin-top:10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    background-color:red;
 }
 
 @media (min-width: 222px) and (max-width: 325px) {
@@ -92,6 +114,18 @@
     .btns button {
         display: none;
     }
+    .project-links{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .task-projects-link{
+        top: -80px;
+        left: -28px;
+    }
+    #links p{
+        font-size: 10px;
+    }
 }
 @media (min-width: 326px) and (max-width: 570px) {
     .user-header {
@@ -119,5 +153,14 @@
     }
     .btns button {
         display: none;
+    }
+    .project-links{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .task-projects-link{
+        top: -80px;
+        left: -40px;
     }
 }
