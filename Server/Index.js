@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json({ limit: '10mb' }))
 app.use(cookieParser())
 app.use(cors({
-    origin: 'https://taskflowtic.vercel.app',
+    origin: 'https://tasksflowtic.vercel.app',
     credentials: true,
     methods: ['GET', 'PUT', 'PATCH', 'DELETE']
 }
