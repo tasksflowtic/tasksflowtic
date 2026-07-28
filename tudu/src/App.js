@@ -4,7 +4,7 @@ import AppRoutes from './AppRoutes';
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import './Components/Controller/AxiosIntercaptor'
-// import AccountSuspend from './Components/User/AccountSuspend';
+import AccountSuspend from './Components/User/AccountSuspend';
 export const ThemeContext = createContext()
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   const URL = process.env.REACT_APP_SERVER_URL
   const [role, setrole] = useState()
   const [user, setuser] = useState()
-  // const [isActive, setisActive] = useState(true)
+  const [isActive, setisActive] = useState(true)
   const [loading, setloading] = useState(false)
 
   useEffect(() => {
@@ -23,6 +23,7 @@ function App() {
         })
         setuser(res?.data?.user)
         setrole(res?.data?.user?.Role)
+        setisActive(res?.data?.user?.isActive)
         setloading(true)
       } catch (error) {
         const status = error?.response?.status
@@ -30,7 +31,7 @@ function App() {
         if (status === 400 || status === 404 || status === 500) {
           alert(error?.response?.data?.message)
         } else if (status === 403) {
-          // setisActive(false)
+          setisActive(false)
         }
       }
     }
@@ -39,7 +40,7 @@ function App() {
     }
   }, [URL])
 
-  // if(!isActive) return <AccountSuspend/>
+  if(!isActive) return <AccountSuspend/>
   if(!loading) return <h1>Loading...</h1>
 
   return (
