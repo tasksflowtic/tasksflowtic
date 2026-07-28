@@ -25,7 +25,7 @@ const CreateProject = () => {
 
     const createProject = async (e) => {
         e.preventDefault()
-        alert('Currently working')
+        alert('Currently working unable to create project')
     }
 
     return (

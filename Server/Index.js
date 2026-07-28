@@ -40,6 +40,7 @@ const CreateNewTicketUser = require('./Router/CreateNewTicketUser')
 const UserContactSupportAllTicket = require('./Router/UserContactSupportAllTicket')
 const PasswordResetLink = require('./Router/SendPasswordResetLink')
 const ResetPassword = require('./Router/ResetPassword')
+const CreateProject = require('./Router/CreateProject')
 
 const UpdateEmail = require('./Router/UpdateEmail')
 const VerifyOtp = require('./Router/UpdateEmail')
@@ -82,6 +83,7 @@ app.post('/support/message', CreateNewTicketUser)
 app.get('/contactsupportmessaege', UserContactSupportAllTicket)
 app.post('/password-reset-link', PasswordResetLink)
 app.patch('/reset-password/:token', ResetPassword)
+app.post('/createproject', CreateProject)
 
 app.post('/admin/signin', AdminSignIn)
 app.get('/adminDashboard', AdminDashboard)
@@ -96,6 +98,10 @@ app.get('/contactsupport/allissues', AllIssues)
 app.get('/support/message/:conversationId', SupportCoversationMessage)
 app.post('/contactsupport/create/:conversationId', CreateConversationMessage)
 app.get('/announcements', GetAnnouncements)
+
+app.get('/test', async (req,res) => {
+    res.send('server run')
+})
 
 // refersh token api 
 app.post('/auth/refreshtoken', RefreshToken)
