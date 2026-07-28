@@ -31,7 +31,7 @@ function App() {
         if (status === 400 || status === 404 || status === 500) {
           alert(error?.response?.data?.message)
         } else if (status === 403) {
-          setisActive(false)
+          // setisActive(false)
         }
       }
     }
