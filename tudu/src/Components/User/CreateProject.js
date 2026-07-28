@@ -3,10 +3,13 @@ import '../../Styles/CreateTask.css'
 import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
 import { DatePicker } from 'antd';
 import TaskCategoryUi from './TaskCategoryUi';
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const CreateProject = () => {
 
-    // const [callonce, setcallonce] = useState(true)
+    const Navigate = useNavigate()
+    const [callonce, setcallonce] = useState(true)
     const [project, setproject] = useState({
         projectname: '',
         projectdes: '',
@@ -25,13 +28,30 @@ const CreateProject = () => {
 
     const createProject = async (e) => {
         e.preventDefault()
-        alert('Currently working unable to create project')
+        if (!callonce) return;
+        const isempty = Object.values(project).some(val => val === '' || val === null || val === undefined)
+        if (isempty) return alert('Fill up all information')
+        try {
+            setcallonce(false)
+            const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/createproject`, { project }, {
+                withCredentials: true
+            })
+            if (res?.status === 200) {
+                window.location.reload()
+            }
+        } catch (err) {
+            const status = err?.response?.status
+            if (status === 404 || status === 500) {
+                alert(err?.response?.data?.message)
+            }
+            setcallonce(true)
+        }
     }
 
     return (
         <div className='create-project-main'>
             <div className='go-back'>
-                <button><KeyboardBackspaceRoundedIcon /></button>
+                <button onClick={()=>Navigate(-1)}><KeyboardBackspaceRoundedIcon /></button>
                 <h1>Start a New Project</h1>
             </div>
             <div className='project-form'>
@@ -55,7 +75,7 @@ const CreateProject = () => {
                         <label for="enddate">End Date</label>
                         <DatePicker onChange={(time, timestring) => handlepicker('duedate', timestring)} />
                     </div>
-                    <button type='submit'>Create new project</button>
+                    <button type='submit' style={{ cursor: callonce ? 'pointer' : 'not-allowed' }}>{callonce ? 'Create new project' : 'Creating new project...'}</button>
                 </form>
             </div>
         </div>

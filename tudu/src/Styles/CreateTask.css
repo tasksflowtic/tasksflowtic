@@ -123,12 +123,13 @@
     outline:none;
     background-color: transparent;
     margin-bottom: -4px;
+    cursor: pointer;
 }
 .go-back h1{
     font-family: 'flamebold';
     font-weight: lighter;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left:10px;
 }
 .project-form{
     width: 100%;
