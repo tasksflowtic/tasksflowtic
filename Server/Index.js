@@ -100,7 +100,7 @@ app.post('/contactsupport/create/:conversationId', CreateConversationMessage)
 app.get('/announcements', GetAnnouncements)
 
 app.get('/test', async (req,res) => {
-    ree.send('server vchl gyagit')
+    res.send('server git chal gya')
 })
 
 // refersh token api 
