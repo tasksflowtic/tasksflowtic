@@ -11,7 +11,7 @@ app.use(cookieParser())
 app.use(cors({
     origin: 'https://taskflowtic.vercel.app',
     credentials: true,
-    methods: ['GET', 'PUT', 'PATCH', 'DELETE']
+    methods: ['GET', 'PUT', 'PATCH', 'DELETE', 'POST']
 }
 ))
 const server = http.createServer(app)
@@ -98,10 +98,6 @@ app.get('/contactsupport/allissues', AllIssues)
 app.get('/support/message/:conversationId', SupportCoversationMessage)
 app.post('/contactsupport/create/:conversationId', CreateConversationMessage)
 app.get('/announcements', GetAnnouncements)
-
-app.get('/test', async (req,res) => {
-    res.send('server run')
-})
 
 // refersh token api 
 app.post('/auth/refreshtoken', RefreshToken)
