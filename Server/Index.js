@@ -99,6 +99,10 @@ app.get('/support/message/:conversationId', SupportCoversationMessage)
 app.post('/contactsupport/create/:conversationId', CreateConversationMessage)
 app.get('/announcements', GetAnnouncements)
 
+app.get('/test', async (req,res) => {
+    ree.send('server vchl gyagit')
+})
+
 // refersh token api 
 app.post('/auth/refreshtoken', RefreshToken)
 app.post('/signout', SignOut)
